@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Game Play\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Pooling System\PoolingManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Object\ShootProfile.cs" />
     <Compile Include="Assets\Scripts\Transform\PlayerMovement.cs" />

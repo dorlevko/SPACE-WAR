@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 1
-  fireRate: 0.15
+  fireRate: 0
   interval: 2
   destroyRate: 2
   spread: 3
-  amount: 10
+  amount: 2
