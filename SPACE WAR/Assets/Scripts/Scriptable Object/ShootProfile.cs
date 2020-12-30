@@ -1,0 +1,11 @@
+﻿using System.Collections;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "ShootProfile", menuName = "Shooting Profile", order = 1)]
+public class ShootProfile : ScriptableObject
+{
+    public float speed, damage, fireRate, interval, destroyRate, spread;
+    public int amount;
+}
