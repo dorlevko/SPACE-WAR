@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\Pooling System\PoolingManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Object\ShootProfile.cs" />
     <Compile Include="Assets\Scripts\Transform\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AutoShoot.cs" />
+    <Compile Include="Assets\Scripts\Weapons\BulletMove.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
