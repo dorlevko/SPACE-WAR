@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 1110833926}
   - component: {fileID: 1110833925}
   - component: {fileID: 1110833924}
+  - component: {fileID: 1110833929}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -403,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1096847040765866, guid: 4d6b65d248ca7df4ba61bcb0804beef9, type: 3}
   healthBar: {fileID: 0}
   isEnemy: 1
 --- !u!65 &1110833925
@@ -480,6 +481,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1110833929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110833923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b541ed8bfe5edc438e8ec3f538a2bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroy: 1
+  destroyAfter: 0
+  spawnObject: []
+  onDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1154162939
 GameObject:
   m_ObjectHideFlags: 0

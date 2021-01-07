@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -10,8 +11,9 @@ public class HealthSystem : MonoBehaviour
 
     private string tagName;
     private float currentHealth;
+    private DeathSystem deathScript;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void OnEnable()
     {
         if (isEnemy)
@@ -22,18 +24,45 @@ public class HealthSystem : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    private void Start()
+    {
+        deathScript = GetComponent<DeathSystem>();
+    }
+
   private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(tagName))
         {
+            Vector3 triggerPosition = other.ClosestPointOnBounds(transform.position);
+            Vector3 direction = triggerPosition - transform.position;
+
+            GameObject fx = PoolingManager.instance.UseObject(hitEffect, triggerPosition, Quaternion.LookRotation(direction));
+
+            PoolingManager.instance.ReturnObject(fx, 1f);
+
             //do damage here
             float damage = float.Parse(other.name);
             TakeDamage(damage);
+
+            PoolingManager.instance.ReturnObject(other.gameObject);
         }
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        CheckHealth();
+    }
+
+    void CheckHealth()
+    {
+        if (currentHealth <= 0f)
+        {
+            //TO-DO:die
+            if (deathScript != null)
+                deathScript.Death();
+
+            //TO-DO:if its enemy, then add points
+        }
     }
 }
