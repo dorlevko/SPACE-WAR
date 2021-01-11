@@ -796,12 +796,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cba84b6a03372438434626919b2036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  rotateSpeed: 2
+  bankingValue: 5
+  rotateObject: 0
+  loopMove: 1
+  loopToNode: 0
   nodes:
-  - {x: -1.931148, y: 0, z: 2.505023}
-  - {x: -0.6323451, y: 0, z: -1.713374}
-  - {x: 2.572945, y: 0, z: -1.795333}
-  - {x: 2.68979, y: 0, z: 0.7025604}
-  - {x: 2.942301, y: 0, z: 3.241912}
+  - {x: -0.8516672, y: 0, z: 3.60643}
+  - {x: 0.723011, y: 0, z: -2.01234}
+  - {x: 4.05289, y: 0, z: -4.395083}
+  - {x: 12.30077, y: 0, z: 0.1307282}
 --- !u!1 &1135864879
 GameObject:
   m_ObjectHideFlags: 0
