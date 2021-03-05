@@ -69,10 +69,13 @@
     <Compile Include="Assets\Scripts\Game Play\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Pooling System\PoolingManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Object\ShootProfile.cs" />
+    <Compile Include="Assets\Scripts\Transform\AutoRotate.cs" />
+    <Compile Include="Assets\Scripts\Transform\LookAtPlayer.cs" />
     <Compile Include="Assets\Scripts\Transform\NodeMove.cs" />
     <Compile Include="Assets\Scripts\Transform\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Weapons\AutoShoot.cs" />
     <Compile Include="Assets\Scripts\Weapons\BulletMove.cs" />
+    <Compile Include="Assets\Scripts\Weapons\MissileMove.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
