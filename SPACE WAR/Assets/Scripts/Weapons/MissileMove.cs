@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class MissileMove : BulletMove
 {
-    public float rotateSpeed = 3f;
+    public float rotateSpeed = 3f, followDuration = 1f;
     private Transform player;
 
     private WaitForSeconds physicsTimeStep;
@@ -18,11 +19,29 @@ public class MissileMove : BulletMove
 
     private void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    // Update is called once per frame
-    void Update()
+
+    private void OnEnable()
     {
-        
+        StartCoroutine(StartFollow(followDuration));
+    }
+    
+    IEnumerator StartFollow(float followDuration)
+    {
+        while (followDuration > 0f)
+        {
+            followDuration -= Time.fixedDeltaTime;
+
+            if (player != null)
+            {
+                Vector3 dir = player.position - transform.position;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), rotateSpeed * Time.fixedDeltaTime);
+            }
+
+            myRb.velocity = transform.forward * speed;
+            
+            yield return physicsTimeStep;
+        }
     }
 }
