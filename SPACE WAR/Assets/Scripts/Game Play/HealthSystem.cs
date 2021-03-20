@@ -59,6 +59,9 @@ public class HealthSystem : MonoBehaviour
     {
         if (currentHealth <= 0f)
         {
+            if (healthBar != null)
+                healthBar.transform.parent.gameObject.SetActive(false);
+
             //TO-DO:die
             if (deathScript != null)
                 deathScript.Death();
